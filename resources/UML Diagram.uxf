@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="14.3.0">
+  <zoom_level>10</zoom_level>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>40</y>
+      <w>210</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>controller::RestaurantLauncher
+--
+--
++main(String[] args): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>760</x>
+      <y>230</y>
+      <w>200</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>model::Credits
+--
+#amount: int
+--
++getAmount(): int
++setAmount(int amount): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>690</x>
+      <y>420</y>
+      <w>270</w>
+      <h>100</h>
+    </coordinates>
+    <panel_attributes>model::CreditsValidation
+--
+-MAX_ALLOWED_CREDITS int
+-MIN_ALLOWED_CREDITS int
+--
++isValid(int amount): boolean
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>40</x>
+      <y>40</y>
+      <w>370</w>
+      <h>160</h>
+    </coordinates>
+    <panel_attributes>model::Order
+--
+#goldenDish = new GoldenDish(): SushiMenuComposer
+#redDish = new RedDish(): SushiMenuComposer
+#greenDish = new GreenDish(): SushiMenuComposer
+#blueDish = new BlueDish(): SushiMenuComposer
+#composerChain: SushiMenuComposer
+--
++order(Credits credits): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>250</x>
+      <y>580</y>
+      <w>480</w>
+      <h>110</h>
+    </coordinates>
+    <panel_attributes>/model::SushiMenuComposer/
+--
+#nextSushiComposer: SushiMenuComposer
+--
++setNextSushiComposer(SushiMenuComposer nextSushiComposer): void
++compose(Credits credits): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>720</x>
+      <y>840</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>model.dishes::BlueDish
+--
+-SUSHI_VALUE = int
+--
++compose(Credits credits): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>0</x>
+      <y>840</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>model.dishes::GoldenDish
+--
+-SUSHI_VALUE = int
+--
++compose(Credits credits): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>480</x>
+      <y>840</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>model.dishes::GreenDish
+--
+-SUSHI_VALUE = int
+--
++compose(Credits credits): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>240</x>
+      <y>840</y>
+      <w>220</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>model.dishes::RedDish
+--
+-SUSHI_VALUE = int
+--
++compose(Credits credits): void
+--
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>610</x>
+      <y>680</y>
+      <w>230</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+m1=0..n
+m2=1
+handles &gt;</panel_attributes>
+    <additional_attributes>210.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>520</x>
+      <y>680</y>
+      <w>120</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+m1=0..n
+m2=1
+handles &gt;</panel_attributes>
+    <additional_attributes>70.0;160.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>340</x>
+      <y>680</y>
+      <w>120</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+m1=0..n
+m2=1
+handles &gt;</panel_attributes>
+    <additional_attributes>10.0;160.0;70.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>100</x>
+      <y>680</y>
+      <w>260</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>lt=-&gt;&gt;
+m1=0..n
+m2=1
+handles &gt;</panel_attributes>
+    <additional_attributes>10.0;160.0;240.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>280</x>
+      <y>190</y>
+      <w>80</w>
+      <h>410</h>
+    </coordinates>
+    <panel_attributes>lt=-
+m1=1
+m2=1
+handler</panel_attributes>
+    <additional_attributes>10.0;390.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>400</x>
+      <y>30</y>
+      <w>340</w>
+      <h>40</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-
+uses</panel_attributes>
+    <additional_attributes>10.0;20.0;320.0;20.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>320</y>
+      <w>80</w>
+      <h>120</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+validates</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;100.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>860</x>
+      <y>100</y>
+      <w>90</w>
+      <h>150</h>
+    </coordinates>
+    <panel_attributes>lt=-
+
+spendable</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;130.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>10</x>
+      <y>730</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Concrete handler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>320</x>
+      <y>500</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Base Handler</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>40</x>
+      <y>210</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Container
+(contains rules)</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>570</x>
+      <y>70</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Client
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLNote</id>
+    <coordinates>
+      <x>660</x>
+      <y>340</y>
+      <w>140</w>
+      <h>70</h>
+    </coordinates>
+    <panel_attributes>Request</panel_attributes>
+    <additional_attributes/>
+  </element>
+</diagram>
